@@ -86,11 +86,17 @@ h1 {
   height: 34px;
  
 }
-.location,
-.toggle,
-.date-time,
+// .location,
+// .toggle,
+// .date-time,
+// .weather-description {
+//   grid-column: 1;
+// }
 .weather-description {
-  grid-column: 1;
+  margin-top:20px;
+}
+.description-items{
+  margin-bottom:20px;
 }
 
 .skycon,
@@ -200,5 +206,17 @@ input:checked + .slider:before {
 }
 
 .button:active {
+  box-shadow: inset 0.2rem 0.2rem 0.5rem rgba(195, 193, 198, 0.9), inset -0.2rem -0.2rem 0.5rem #fff;
+}
+
+.icon {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  // margin: 0 auto;
+  margin-top: 40px;
+  right: 25%;
+  position: absolute;
+
   box-shadow: inset 0.2rem 0.2rem 0.5rem rgba(195, 193, 198, 0.9), inset -0.2rem -0.2rem 0.5rem #fff;
 }

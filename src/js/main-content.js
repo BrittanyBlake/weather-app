@@ -1,33 +1,45 @@
 const main = (() => {
   const mainDiv = document.createElement("div");
   mainDiv.setAttribute("id", "header");
-  const mainTemp = document.createElement("h1");
-  mainTemp.setAttribute("class", "temp");
-  mainTemp.innerHTML = "20° C";
+  const mainTemp = document.createElement("div");
+  mainTemp.innerHTML = `<h1 class="temp"> 20° C</h1>`;
+  const mainLocation = document.createElement("div");
+  mainLocation.innerHTML = `<h2 class="location">Granada, ES</h2>`;
+  const iconDiv = document.createElement("div");
+  iconDiv.setAttribute("class", "icon");
+  const canvasIcon = document.createElement("canvas");
+  canvasIcon.setAttribute("id", "icon");
+  canvasIcon.setAttribute("width", "128");
+  canvasIcon.setAttribute("height", "128");
+  //const smallText = document.createElement('small')
+  //   smallText.setAttribute('class', 'weather-text')
+  //   smallText.innerHTML = 'few clouds'
+  const descriptionDiv = document.createElement("div");
+  descriptionDiv.setAttribute("class", "weather-description");
+  const realFeel = document.createElement("h4");
+  realFeel.setAttribute('class', 'description-items')
+  realFeel.innerHTML = "Feels like: 19°C";
+  const high = document.createElement("h4");
+  high.setAttribute("class", "description-items");
+  high.innerHTML = "Today's High: 20°C";
+  const low = document.createElement("h4");
+  low.setAttribute("class", "description-items");
+  low.innerHTML = "Today's Low: 18°C";
+  const humidity = document.createElement("h4");
+  humidity.setAttribute("class", "description-items");
+  humidity.innerHTML = "humidity: 68%";
 
-  
+  mainTemp.appendChild(descriptionDiv);
   mainDiv.appendChild(mainTemp);
+  iconDiv.appendChild(canvasIcon);
+  mainDiv.appendChild(iconDiv);
+  mainTemp.appendChild(mainLocation);
+  mainLocation.appendChild(descriptionDiv)
+  descriptionDiv.appendChild(realFeel)
+  descriptionDiv.appendChild(high);
+  descriptionDiv.appendChild(low);
+  descriptionDiv.appendChild(humidity);
   return mainDiv;
 })();
 
 export default main;
-
-//   <div id="header">
-//         <h1 class="temp"> 20° C</h1>
-//  <label for="toggle" class="toggle">
-//      <input type="checkbox">
-//      <span class="slider round"></span>
-//  </label>
-//         <h2 class="location">Granada, ES</h2>
-//         <p class="date-time">23:30-Tuesday, 8 Sep'19 </p>
-//         <p class="skycon"> ICON</p>
-//         <small class="weather-text"> few clouds</small>
-
-//         <div class="weather-description">
-//             <h3>Feels Like: 19°C</h3>
-//             <h3>High: 20°C</h3>
-//             <h3>Low: 18°C</h3>
-//             <h3>Humidity: 68%</h3>
-//         </div>
-
-//     </div>
