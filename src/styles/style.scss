@@ -58,11 +58,7 @@ li {
   padding: 60px;
 }
 
-.search {
-  padding: 10px;
-  margin: 10px;
-  border-radius: 25px;
-}
+
 #header {
   padding: 40px;
   display: grid;
@@ -146,4 +142,54 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
+}
+
+.form {
+  margin-top: 2rem;
+  // text-align: center;
+}
+
+.search {
+  padding: 10px;
+  margin: 20px;
+
+  height: 3rem;
+  border: none;
+  border-radius: 1rem;
+  font-size: 1.4rem;
+  padding-left: 1.4rem;
+  box-shadow: inset 0.2rem 0.2rem 0.5rem lightgrey, inset -0.2rem -0.2rem 0.5rem white;
+  // background: none;
+  color: dimgrey;
+}
+
+.form__input:focus {
+  outline: none;
+  box-shadow: 0.3rem 0.3rem 0.6rem lightgrey, -0.2rem -0.2rem 0.5rem white;
+}
+
+.button {
+  display: none;
+  cursor: pointer;
+  text-align: center;
+  border: none;
+  border-radius: 1.2rem;
+  padding: 1rem 3rem;
+  transition: all 260ms ease;
+  text-decoration: none;
+  max-width: 100%;
+  color: dimgrey;
+  background-color: #f4f4f4;
+  margin-left: 0.5rem;
+  box-shadow: 0.3rem 0.3rem 0.5rem rgba(195, 193, 198, 0.9), -0.2rem -0.2rem 0.4rem #fff;
+}
+
+.button:hover,
+.button:focus {
+  color: #21268b;
+  outline: none;
+}
+
+.button:active {
+  box-shadow: inset 0.2rem 0.2rem 0.5rem rgba(195, 193, 198, 0.9), inset -0.2rem -0.2rem 0.5rem #fff;
 }
