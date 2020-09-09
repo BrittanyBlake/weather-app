@@ -24,6 +24,7 @@ const smallText = document.querySelector(".weather-text");
 
 
 
+
 const key = "929f44f39fa3d7465cb2e466b81dfc25";
 
 async function getWeather(value) {
@@ -33,6 +34,7 @@ async function getWeather(value) {
     const result = await response.json();
     const data = result;
     displayData(data)
+    changeImage(data);
     
   console.log(data)
 }
@@ -54,8 +56,24 @@ const test = getWeather("granada")
      low.innerHTML = `Today's low: ${Math.floor(data.main.temp_min)}° C`;
      humidity.innerHTML = `Humidity: ${data.main.humidity}%`;
      smallText.innerHTML = `${data.weather[0].description}`;
-     
-      
-
  }
 
+ const changeImage = (data) => {
+   if (data.weather[0].main === 'Clouds'){
+     container.classList = ""
+     container.classList.add("cloudy-img");
+   } else if (data.weather[0].main === 'Snow'){
+     container.classList = "";
+     container.classList.add("snow-img");
+   } else if (data.weather[0].main === "Rain" || data.weather[0].main === "Drizzle") {
+     container.classList = "";
+     container.classList.add("rain-img");
+   } else if (data.weather[0].main === "Thunderstorm") {
+     container.classList = "";
+     container.classList.add("thunderstorm-img");
+   }else {
+     container.classList = "";
+     container.classList.add("default-img");
+   }
+
+ }
