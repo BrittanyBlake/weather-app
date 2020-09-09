@@ -60,7 +60,7 @@ li {
 
 
 #header {
-  padding: 40px;
+  padding-left: 40px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
@@ -72,10 +72,19 @@ h1 {
 
 /* The switch - the box around the slider */
 .toggle {
-  position: relative;
+  // position: relative;
+  // display: inline-block;
+  // width: 60px;
+  // height: 34px;
+  // margin-left:50px;
+
+  top: 7vh;
+  right: 5%;
+  position: absolute;
   display: inline-block;
-  width: 60px;
+  width: 70px;
   height: 34px;
+ 
 }
 .location,
 .toggle,
