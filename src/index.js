@@ -14,6 +14,13 @@ container.appendChild(footer);
 
 const weatherForm = document.querySelector('.form')
 const formInput = document.querySelector(".search");
+const mainTemp = document.querySelector(".temp");
+const mainLocation = document.querySelector(".location")
+const realFeel = document.querySelector(".feel")
+const high = document.querySelector(".high")
+const low = document.querySelector(".low");
+const humidity = document.querySelector(".humidity");
+const smallText = document.querySelector(".weather-text");
 
 
 
@@ -25,14 +32,30 @@ async function getWeather(value) {
     );
     const result = await response.json();
     const data = result;
+    displayData(data)
+    
   console.log(data)
 }
-const test = getWeather("basseterre")
 
-console.log(test)
+const test = getWeather("granada")
 
  weatherForm.addEventListener("submit", (e) => {
    e.preventDefault();
    getWeather(formInput.value);
    weatherForm.reset()
+   
  });
+
+ const displayData = (data) => {
+     mainTemp.innerHTML = `${Math.floor(data.main.temp)}° C`;
+     mainLocation.innerHTML = `${data.name}, ${data.sys.country}`
+     realFeel.innerHTML = `Feels like: ${Math.floor(data.main.feels_like)}° C`;
+     high.innerHTML = `Today's high: ${Math.floor(data.main.temp_max)}° C`;
+     low.innerHTML = `Today's low: ${Math.floor(data.main.temp_min)}° C`;
+     humidity.innerHTML = `Humidity: ${data.main.humidity}%`;
+     smallText.innerHTML = `${data.weather[0].description}`;
+     
+      
+
+ }
+

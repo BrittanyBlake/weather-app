@@ -2,9 +2,9 @@ const main = (() => {
   const mainDiv = document.createElement("div");
   mainDiv.setAttribute("id", "header");
   const mainTemp = document.createElement("div");
-  mainTemp.innerHTML = `<h1 class="temp"> 20° C</h1>`;
+  mainTemp.innerHTML = `<h1 class="temp"> </h1>`;
   const mainLocation = document.createElement("div");
-  mainLocation.innerHTML = `<h2 class="location">Granada, ES</h2>`;
+  mainLocation.innerHTML = `<h2 class="location"></h2>`;
   const iconDiv = document.createElement("div");
   iconDiv.setAttribute("class", "icon");
   const canvasIcon = document.createElement("canvas");
@@ -13,21 +13,21 @@ const main = (() => {
   canvasIcon.setAttribute("height", "128");
   const smallText = document.createElement('small')
   smallText.setAttribute('class', 'weather-text')
-  smallText.innerHTML = 'few clouds'
+  // smallText.innerHTML = 'few clouds'
   const descriptionDiv = document.createElement("div");
   descriptionDiv.setAttribute("class", "weather-description");
   const realFeel = document.createElement("h4");
-  realFeel.setAttribute('class', 'description-items')
-  realFeel.innerHTML = "Feels like: 19°C";
+  realFeel.setAttribute('class', 'feel description-items')
+  // realFeel.innerHTML = "Feels like: 19°C";
   const high = document.createElement("h4");
-  high.setAttribute("class", "description-items");
-  high.innerHTML = "Today's High: 20°C";
+  high.setAttribute("class", "high description-items");
+  // high.innerHTML = "Today's High: 20°C";
   const low = document.createElement("h4");
-  low.setAttribute("class", "description-items");
-  low.innerHTML = "Today's Low: 18°C";
+  low.setAttribute("class", "low description-items");
+  // low.innerHTML = "Today's Low: 18°C";
   const humidity = document.createElement("h4");
-  humidity.setAttribute("class", "description-items");
-  humidity.innerHTML = "humidity: 68%";
+  humidity.setAttribute("class", "humidity description-items");
+  // humidity.innerHTML = "humidity: 68%";
 
   mainTemp.appendChild(descriptionDiv);
   mainDiv.appendChild(mainTemp);
