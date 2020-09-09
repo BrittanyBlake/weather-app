@@ -13,5 +13,3 @@ const toggleButton = (() => {
 })();
 
 export default toggleButton;
-
-

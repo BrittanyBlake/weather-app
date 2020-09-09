@@ -95,6 +95,5 @@ const convertTemp = (data) => {
       high.innerHTML = `Today's high: ${Math.floor(data.main.temp_max)}° C`;
       low.innerHTML = `Today's low: ${Math.floor(data.main.temp_min)}° C`;
     }
-
   });
 };
