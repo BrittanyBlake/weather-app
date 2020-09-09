@@ -11,9 +11,9 @@ const main = (() => {
   canvasIcon.setAttribute("id", "icon");
   canvasIcon.setAttribute("width", "128");
   canvasIcon.setAttribute("height", "128");
-  //const smallText = document.createElement('small')
-  //   smallText.setAttribute('class', 'weather-text')
-  //   smallText.innerHTML = 'few clouds'
+  const smallText = document.createElement('small')
+  smallText.setAttribute('class', 'weather-text')
+  smallText.innerHTML = 'few clouds'
   const descriptionDiv = document.createElement("div");
   descriptionDiv.setAttribute("class", "weather-description");
   const realFeel = document.createElement("h4");
@@ -31,6 +31,7 @@ const main = (() => {
 
   mainTemp.appendChild(descriptionDiv);
   mainDiv.appendChild(mainTemp);
+  iconDiv.appendChild(smallText);
   iconDiv.appendChild(canvasIcon);
   mainDiv.appendChild(iconDiv);
   mainTemp.appendChild(mainLocation);

@@ -99,12 +99,15 @@ h1 {
   margin-bottom:20px;
 }
 
-
-
-.skycon,
-.weather-text {
-  grid-column: 2;
+.weather-text{
+  margin-top:1400px;
 }
+
+
+// .skycon,
+// .weather-text {
+//   grid-column: 2;
+// }
 
 /* Hide default HTML checkbox */
 .toggle input {
