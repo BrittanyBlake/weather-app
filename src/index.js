@@ -33,8 +33,6 @@ async function getWeather(value) {
   const data = result;
   displayData(data);
   changeImage(data);
-
-  console.log(data);
 }
 
 getWeather("granada");
@@ -78,7 +76,6 @@ const changeImage = (data) => {
   }
 };
 const toFahrenheit = (temp) => temp * (9 / 5) + 32;
-console.log(toFahrenheit(23));
 
 const convertTemp = (data) => {
   const mainTempF = toFahrenheit(data.main.temp);
@@ -86,10 +83,8 @@ const convertTemp = (data) => {
   const highF = toFahrenheit(data.main.temp_max);
   const lowF = toFahrenheit(data.main.temp_min);
 
-  console.log(mainTempF);
   toggle.addEventListener("change", (e) => {
     if (e.target.checked) {
-      console.log("hi");
       mainTemp.innerHTML = `${Math.floor(mainTempF)}° F`;
       realFeel.innerHTML = `Feels like: ${Math.floor(realFeelF)}° F`;
       high.innerHTML = `Today's high: ${Math.floor(highF)}° F`;
@@ -100,14 +95,6 @@ const convertTemp = (data) => {
       high.innerHTML = `Today's high: ${Math.floor(data.main.temp_max)}° C`;
       low.innerHTML = `Today's low: ${Math.floor(data.main.temp_min)}° C`;
     }
-    //toggleButtonValue.checked = e.target.checked;
+
   });
 };
-
-// toggle.addEventListener('change',(e) => {
-//   if (e.target.checked){
-//     console.log("hi");
-
-//   } ;
-//   //toggleButtonValue.checked = e.target.checked;
-// })
