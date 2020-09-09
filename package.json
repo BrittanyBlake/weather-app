@@ -1,13 +1,12 @@
 {
   "name": "weather-app",
   "version": "1.0.0",
+  "private": true,
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server --config webpack.dev.js --open",
-    "build": "webpack --config webpack.dev.js",
-    "watch": "webpack --watch"
+    "start": "webpack-dev-server  --config webpack.dev.js --open",
+    "build": "webpack --config webpack.prod.js"
   },
   "repository": {
     "type": "git",
@@ -20,39 +19,34 @@
     "url": "https://github.com/BrittanyBlake/weather-app/issues"
   },
   "homepage": "https://github.com/BrittanyBlake/weather-app#readme",
-  "devDpendencies": {
-    "@babel/core": "^7.11.1",
+  "devDependencies": {
+    "@babel/core": "^7.11.0",
     "@babel/preset-env": "^7.11.0",
     "babel-loader": "^8.1.0",
-    "css-loader": "^2.1.1",
+    "css-loader": "^4.2.0",
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.1.0",
     "eslint-plugin-import": "^2.20.2",
-    "stylelint-scss": "^3.17.2",
-    "stylelint": "^13.3.3",
-    "stylelint-csstree-validator": "^1.8.0",
-    "stylelint-config-standard": "^20.0.0",
-    "file-loader": "^3.0.1",
-    "html-loader": "^0.5.5",
-    "jquery": "^3.5.1",
-    "node-sass": "^4.11.0",
-    "popper.js": "^1.16.1",
+    "file-loader": "^6.1.0",
+    "html-loader": "^1.1.0",
+    "html-webpack-plugin": "^4.3.0",
+    "mini-css-extract-plugin": "^0.9.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
     "sass": "^1.26.10",
-    "sass-loader": "^7.3.1",
-    "style-loader": "^0.23.1",
+    "sass-loader": "^9.0.2",
+    "style-loader": "^1.2.1",
+    "stylelint": "^13.3.3",
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-csstree-validator": "^1.8.0",
+    "stylelint-scss": "^3.17.2",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12",
-    "webpack-dev-server": "^3.11.0"
+    "webpack-dev-server": "^3.11.0",
+    "webpack-merge": "^5.0.9"
   },
   "dependencies": {
-    "bootstrap": "^4.5.2",
     "clean-webpack-plugin": "^3.0.0",
-    "copy-webpack-plugin": "^6.0.3",
-    "mini-css-extract-plugin": "^0.5.0",
-    "optimize-css-assets-webpack-plugin": "^5.0.1",
-    "terser-webpack-plugin": "^4.1.0",
-    "html-webpack-plugin": "^3.2.0",
-    "webpack-merge": "^5.1.2",
-    "skycons": "^1.0.0"
+    "skycons": "^1.0.0",
+    "terser-webpack-plugin": "^3.0.8"
   }
 }
