@@ -2,10 +2,12 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  
 }
 
 body {
   color: white;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .default-img {
@@ -66,7 +68,7 @@ li {
 }
 
 h1 {
-  margin-top: 50px;
+  margin-top: 30px;
   font-size: 6rem;
 }
 
