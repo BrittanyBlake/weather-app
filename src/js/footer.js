@@ -36,8 +36,8 @@ const footer = (() => {
   TonightIcon.setAttribute("class", "icon2");
   const canvasIconTonight = document.createElement("canvas");
   canvasIconTonight.setAttribute("id", "icon4");
-  canvasIconTonight.setAttribute("width", "120");
-  canvasIconTonight.setAttribute("height", "120");
+  canvasIconTonight.setAttribute("width", "130");
+  canvasIconTonight.setAttribute("height", "130");
   const TonightTemp = document.createElement("li");
   TonightTemp.setAttribute("class", "TonightTemp");
   const TomorrowDiv = document.createElement("div");
@@ -49,8 +49,8 @@ const footer = (() => {
   TomorrowIcon.setAttribute("class", "icon2");
   const canvasIconTomorrow = document.createElement("canvas");
   canvasIconTomorrow.setAttribute("id", "icon5");
-  canvasIconTomorrow.setAttribute("width", "90");
-  canvasIconTomorrow.setAttribute("height", "90");
+  canvasIconTomorrow.setAttribute("width", "100");
+  canvasIconTomorrow.setAttribute("height", "100");
   const TomorrowTemp = document.createElement("li");
   TomorrowTemp.setAttribute("class", "TomorrowTemp");
 

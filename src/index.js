@@ -188,16 +188,16 @@ const convertTemp = (data) => {
     if (toggler.checked) {
       mainTemp.innerHTML = `${Math.floor(mainTempF)}°F`;
       realFeel.innerHTML = `Feels like: ${Math.floor(realFeelF)}°F`;
-      high.innerHTML = `Today's high: ${Math.floor(highF)}°F`;
-      low.innerHTML = `Today's low: ${Math.floor(lowF)}°F`;
+      //high.innerHTML = `Today's high: ${Math.floor(highF)}°F`;
+      //low.innerHTML = `Today's low: ${Math.floor(lowF)}°F`;
       footerMax.innerHTML = `${Math.floor(highF)}°F`;
       footerMin.innerHTML = `${Math.floor(lowF)}°F`;
       tomorrowTemp.innerHTML = `${Math.floor(tomorrowF)}°F`;
     } else {
       mainTemp.innerHTML = `${Math.floor(data.main.temp)}°C`;
       realFeel.innerHTML = `Feels like: ${Math.floor(data.main.feels_like)}°C`;
-      high.innerHTML = `Today's high: ${Math.floor(data.main.temp_max)}°C`;
-      low.innerHTML = `Today's low: ${Math.floor(data.main.temp_min)}°C`;
+      //high.innerHTML = `Today's high: ${Math.floor(data.main.temp_max)}°C`;
+      //low.innerHTML = `Today's low: ${Math.floor(data.main.temp_min)}°C`;
       footerMax.innerHTML = `${Math.floor(data.main.temp_max)}°C`;
       footerMin.innerHTML = `${Math.floor(data.main.temp_min)}°C`;
       tomorrowTemp.innerHTML = `20°C`;
