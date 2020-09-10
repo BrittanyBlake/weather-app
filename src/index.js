@@ -140,13 +140,14 @@ const addSkycon = (data) => {
 };
 
 const displayData = (data) => {
-  mainTemp.innerHTML = `${Math.floor(data.main.temp)}°C`;
+  const { main } = data;
+  mainTemp.innerHTML = `${Math.floor(main.temp)}°C`;
   mainLocation.innerHTML = `${data.name}, ${data.sys.country}`;
-  realFeel.innerHTML = `Feels like: ${Math.floor(data.main.feels_like)}°C`;
-  humidity.innerHTML = `Humidity: ${data.main.humidity}%`;
+  realFeel.innerHTML = `Feels like: ${Math.floor(main.feels_like)}°C`;
+  humidity.innerHTML = `Humidity: ${main.humidity}%`;
   footerDesc.innerHTML = `${data.weather[0].description}`;
-  footerMax.innerHTML = `${Math.floor(data.main.temp_max)}°C`;
-  footerMin.innerHTML = `${Math.floor(data.main.temp_min)}°C`;
+  footerMax.innerHTML = `${Math.floor(main.temp_max)}°C`;
+  footerMin.innerHTML = `${Math.floor(main.temp_min)}°C`;
   tomorrowTemp.innerHTML = '20°C';
   convertTemp(data);
   addSkycon(data);
