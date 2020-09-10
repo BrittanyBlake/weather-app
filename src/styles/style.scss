@@ -191,3 +191,7 @@ input:checked + .slider::before {
   padding-top: 10px;
   padding-bottom: 20px;
 }
+
+.error::placeholder{
+  color:red;
+}
