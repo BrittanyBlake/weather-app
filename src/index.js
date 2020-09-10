@@ -29,36 +29,32 @@ const tomorrowTemp = document.querySelector('.TomorrowTemp');
 
 const key = '929f44f39fa3d7465cb2e466b81dfc25';
 
-async function getWeather(value) {
-  const response = await fetch(
-    `https://api.openweathermap.org/data/2.5/weather?q=${value}&appid=${key}&units=metric`,
-  );
-  const result = await response.json();
-  const data = result;
-  displayData(data);
-  changeImage(data);
-}
+const toFahrenheit = (temp) => temp * (9 / 5) + 32;
+const convertTemp = (data) => {
+  const mainTempF = toFahrenheit(data.main.temp);
+  const realFeelF = toFahrenheit(data.main.feels_like);
+  const highF = toFahrenheit(data.main.temp_max);
+  const lowF = toFahrenheit(data.main.temp_min);
+  const tomorrowF = toFahrenheit(20);
 
-getWeather('granada');
-
-weatherForm.addEventListener('submit', (e) => {
-  e.preventDefault();
-  getWeather(formInput.value);
-  weatherForm.reset();
-  toggler.checked = false;
-});
-
-const displayData = (data) => {
-  mainTemp.innerHTML = `${Math.floor(data.main.temp)}°C`;
-  mainLocation.innerHTML = `${data.name}, ${data.sys.country}`;
-  realFeel.innerHTML = `Feels like: ${Math.floor(data.main.feels_like)}°C`;
-  humidity.innerHTML = `Humidity: ${data.main.humidity}%`;
-  footerDesc.innerHTML = `${data.weather[0].description}`;
   footerMax.innerHTML = `${Math.floor(data.main.temp_max)}°C`;
   footerMin.innerHTML = `${Math.floor(data.main.temp_min)}°C`;
-  tomorrowTemp.innerHTML = '20°C';
-  convertTemp(data);
-  addSkycon(data);
+
+  toggle.addEventListener('change', () => {
+    if (toggler.checked) {
+      mainTemp.innerHTML = `${Math.floor(mainTempF)}°F`;
+      realFeel.innerHTML = `Feels like: ${Math.floor(realFeelF)}°F`;
+      footerMax.innerHTML = `${Math.floor(highF)}°F`;
+      footerMin.innerHTML = `${Math.floor(lowF)}°F`;
+      tomorrowTemp.innerHTML = `${Math.floor(tomorrowF)}°F`;
+    } else {
+      mainTemp.innerHTML = `${Math.floor(data.main.temp)}°C`;
+      realFeel.innerHTML = `Feels like: ${Math.floor(data.main.feels_like)}°C`;
+      footerMax.innerHTML = `${Math.floor(data.main.temp_max)}°C`;
+      footerMin.innerHTML = `${Math.floor(data.main.temp_min)}°C`;
+      tomorrowTemp.innerHTML = '20°C';
+    }
+  });
 };
 
 const addSkycon = (data) => {
@@ -141,6 +137,19 @@ const addSkycon = (data) => {
   }
 };
 
+const displayData = (data) => {
+  mainTemp.innerHTML = `${Math.floor(data.main.temp)}°C`;
+  mainLocation.innerHTML = `${data.name}, ${data.sys.country}`;
+  realFeel.innerHTML = `Feels like: ${Math.floor(data.main.feels_like)}°C`;
+  humidity.innerHTML = `Humidity: ${data.main.humidity}%`;
+  footerDesc.innerHTML = `${data.weather[0].description}`;
+  footerMax.innerHTML = `${Math.floor(data.main.temp_max)}°C`;
+  footerMin.innerHTML = `${Math.floor(data.main.temp_min)}°C`;
+  tomorrowTemp.innerHTML = '20°C';
+  convertTemp(data);
+  addSkycon(data);
+};
+
 const changeImage = (data) => {
   if (data.weather[0].icon === '01n') {
     container.classList = '';
@@ -165,31 +174,22 @@ const changeImage = (data) => {
     container.classList.add('default-img');
   }
 };
-const toFahrenheit = (temp) => temp * (9 / 5) + 32;
 
-const convertTemp = (data) => {
-  const mainTempF = toFahrenheit(data.main.temp);
-  const realFeelF = toFahrenheit(data.main.feels_like);
-  const highF = toFahrenheit(data.main.temp_max);
-  const lowF = toFahrenheit(data.main.temp_min);
-  const tomorrowF = toFahrenheit(20);
+async function getWeather(value) {
+  const response = await fetch(
+    `https://api.openweathermap.org/data/2.5/weather?q=${value}&appid=${key}&units=metric`,
+  );
+  const result = await response.json();
+  const data = result;
+  displayData(data);
+  changeImage(data);
+}
 
-  footerMax.innerHTML = `${Math.floor(data.main.temp_max)}°C`;
-  footerMin.innerHTML = `${Math.floor(data.main.temp_min)}°C`;
+getWeather('granada');
 
-  toggle.addEventListener('change', (e) => {
-    if (toggler.checked) {
-      mainTemp.innerHTML = `${Math.floor(mainTempF)}°F`;
-      realFeel.innerHTML = `Feels like: ${Math.floor(realFeelF)}°F`;
-      footerMax.innerHTML = `${Math.floor(highF)}°F`;
-      footerMin.innerHTML = `${Math.floor(lowF)}°F`;
-      tomorrowTemp.innerHTML = `${Math.floor(tomorrowF)}°F`;
-    } else {
-      mainTemp.innerHTML = `${Math.floor(data.main.temp)}°C`;
-      realFeel.innerHTML = `Feels like: ${Math.floor(data.main.feels_like)}°C`;
-      footerMax.innerHTML = `${Math.floor(data.main.temp_max)}°C`;
-      footerMin.innerHTML = `${Math.floor(data.main.temp_min)}°C`;
-      tomorrowTemp.innerHTML = '20°C';
-    }
-  });
-};
+weatherForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  getWeather(formInput.value);
+  weatherForm.reset();
+  toggler.checked = false;
+});
