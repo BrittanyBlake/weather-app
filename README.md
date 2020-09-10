@@ -99,7 +99,7 @@ This project was built using these technologies.
 - $ `git clone git@github.com:BrittanyBlake/weather-app`
 - `cd` into the project directory
 - Run `npm install` to install the necessary modules
-- Run `npm start` to open the local server
+- Run `npm start` to automatically open the local server
 
 
 <!-- CONTACT -->
