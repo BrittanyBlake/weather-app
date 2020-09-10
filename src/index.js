@@ -19,10 +19,7 @@ const formInput = document.querySelector(".search");
 const mainTemp = document.querySelector(".temp");
 const mainLocation = document.querySelector(".location");
 const realFeel = document.querySelector(".feel");
-const high = document.querySelector(".high");
-const low = document.querySelector(".low");
 const humidity = document.querySelector(".humidity");
-const smallText = document.querySelector(".weather-text");
 const toggle = document.querySelector(".toggle");
 const toggler = document.querySelector(".toggler");
 const footerDesc = document.querySelector(".currentTempDesc");
@@ -40,7 +37,6 @@ async function getWeather(value) {
   const data = result;
   displayData(data);
   changeImage(data);
-  console.log(data);
 }
 
 getWeather("granada");
@@ -56,10 +52,7 @@ const displayData = (data) => {
   mainTemp.innerHTML = `${Math.floor(data.main.temp)}°C`;
   mainLocation.innerHTML = `${data.name}, ${data.sys.country}`;
   realFeel.innerHTML = `Feels like: ${Math.floor(data.main.feels_like)}°C`;
-  //high.innerHTML = `Today's high: ${Math.floor(data.main.temp_max)}° C`;
-  //low.innerHTML = `Today's low: ${Math.floor(data.main.temp_min)}° C`;
   humidity.innerHTML = `Humidity: ${data.main.humidity}%`;
-  //smallText.innerHTML = `${data.weather[0].description}`;
   footerDesc.innerHTML = `${data.weather[0].description}`;
   footerMax.innerHTML = `${Math.floor(data.main.temp_max)}°C`;
   footerMin.innerHTML = `${Math.floor(data.main.temp_min)}°C`;
@@ -188,16 +181,12 @@ const convertTemp = (data) => {
     if (toggler.checked) {
       mainTemp.innerHTML = `${Math.floor(mainTempF)}°F`;
       realFeel.innerHTML = `Feels like: ${Math.floor(realFeelF)}°F`;
-      //high.innerHTML = `Today's high: ${Math.floor(highF)}°F`;
-      //low.innerHTML = `Today's low: ${Math.floor(lowF)}°F`;
       footerMax.innerHTML = `${Math.floor(highF)}°F`;
       footerMin.innerHTML = `${Math.floor(lowF)}°F`;
       tomorrowTemp.innerHTML = `${Math.floor(tomorrowF)}°F`;
     } else {
       mainTemp.innerHTML = `${Math.floor(data.main.temp)}°C`;
       realFeel.innerHTML = `Feels like: ${Math.floor(data.main.feels_like)}°C`;
-      //high.innerHTML = `Today's high: ${Math.floor(data.main.temp_max)}°C`;
-      //low.innerHTML = `Today's low: ${Math.floor(data.main.temp_min)}°C`;
       footerMax.innerHTML = `${Math.floor(data.main.temp_max)}°C`;
       footerMin.innerHTML = `${Math.floor(data.main.temp_min)}°C`;
       tomorrowTemp.innerHTML = `20°C`;

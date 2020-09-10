@@ -31,7 +31,6 @@ const main = (() => {
   
   mainDiv.appendChild(iconDiv);
   mainDiv.appendChild(mainLocation)
-  // mainTemp.appendChild(mainLocation);
   mainLocation.appendChild(mainTemp);
   descriptionDiv.appendChild(realFeel);
   descriptionDiv.appendChild(high);
