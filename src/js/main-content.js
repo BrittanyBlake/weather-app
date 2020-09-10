@@ -25,12 +25,14 @@ const main = (() => {
   humidity.setAttribute("class", "humidity description-items");
 
   mainTemp.appendChild(descriptionDiv);
+  mainDiv.appendChild(canvasIcon);
   mainDiv.appendChild(mainTemp);
   iconDiv.appendChild(smallText);
-  iconDiv.appendChild(canvasIcon);
+  
   mainDiv.appendChild(iconDiv);
-  mainTemp.appendChild(mainLocation);
-  mainLocation.appendChild(descriptionDiv);
+  mainDiv.appendChild(mainLocation)
+  // mainTemp.appendChild(mainLocation);
+  mainLocation.appendChild(mainTemp);
   descriptionDiv.appendChild(realFeel);
   descriptionDiv.appendChild(high);
   descriptionDiv.appendChild(low);
