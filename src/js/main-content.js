@@ -8,7 +8,7 @@ const main = (() => {
   const iconDiv = document.createElement("div");
   iconDiv.setAttribute("class", "icon");
   const canvasIcon = document.createElement("canvas");
-  canvasIcon.setAttribute("id", "icon");
+  canvasIcon.setAttribute("id", "icon2");
   canvasIcon.setAttribute("width", "128");
   canvasIcon.setAttribute("height", "128");
   const smallText = document.createElement("small");
