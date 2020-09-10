@@ -75,6 +75,9 @@ This is project was designed to practice the concepts of async and await using A
     <img src="./src/assets/rain.gif" alt="gif" >
 </p>
 
+## LIVE DEMO
+ [Link to live demo](https://weatherapp-brittany.netlify.app/) 
+
 
 <!-- BUILD WITH -->
 ## Built With
