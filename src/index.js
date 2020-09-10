@@ -30,7 +30,6 @@ const footerMax = document.querySelector(".TodayTemp");
 const footerMin = document.querySelector(".TonightTemp");
 const tomorrowTemp = document.querySelector(".TomorrowTemp");
 
-
 const key = "929f44f39fa3d7465cb2e466b81dfc25";
 
 async function getWeather(value) {
@@ -180,8 +179,8 @@ const convertTemp = (data) => {
   const realFeelF = toFahrenheit(data.main.feels_like);
   const highF = toFahrenheit(data.main.temp_max);
   const lowF = toFahrenheit(data.main.temp_min);
-  const tomorrowF = toFahrenheit(20)
-  
+  const tomorrowF = toFahrenheit(20);
+
   footerMax.innerHTML = `${Math.floor(data.main.temp_max)}° C`;
   footerMin.innerHTML = `${Math.floor(data.main.temp_min)}° C`;
 
@@ -194,7 +193,6 @@ const convertTemp = (data) => {
       footerMax.innerHTML = `${Math.floor(highF)}° F`;
       footerMin.innerHTML = `${Math.floor(lowF)}° F`;
       tomorrowTemp.innerHTML = `${Math.floor(tomorrowF)}° F`;
-      
     } else {
       mainTemp.innerHTML = `${Math.floor(data.main.temp)}° C`;
       realFeel.innerHTML = `Feels like: ${Math.floor(data.main.feels_like)}° C`;

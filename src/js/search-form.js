@@ -6,13 +6,8 @@ const form = (() => {
   input.setAttribute("type", "text");
   input.setAttribute("class", "search");
   input.setAttribute("placeholder", "Enter a city");
-  const button = document.createElement("button");
-  button.setAttribute("class", "button");
-  button.setAttribute("type", "submit");
-  button.textContent = "SEARCH";
-
+  
   form.appendChild(input);
-  form.appendChild(button);
   nav.appendChild(form);
   return nav;
 })();
