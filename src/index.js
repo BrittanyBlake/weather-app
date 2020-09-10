@@ -25,10 +25,10 @@ const humidity = document.querySelector(".humidity");
 const smallText = document.querySelector(".weather-text");
 const toggle = document.querySelector(".toggle");
 const toggler = document.querySelector(".toggler");
-const footerDesc = document.querySelector(".sundayTemp");
-const footerMax = document.querySelector(".mondayTemp");
-const footerMin = document.querySelector(".tuesdayTemp");
-const tomorrowTemp = document.querySelector(".wednesdayTemp");
+const footerDesc = document.querySelector(".currentTempDesc");
+const footerMax = document.querySelector(".TodayTemp");
+const footerMin = document.querySelector(".TonightTemp");
+const tomorrowTemp = document.querySelector(".TomorrowTemp");
 
 
 const key = "929f44f39fa3d7465cb2e466b81dfc25";
