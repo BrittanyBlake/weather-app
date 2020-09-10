@@ -16,7 +16,7 @@ body {
   background-position: top;
 }
 .night-img {
-  background: url("../assets/clear-night3.jpg");
+  background: url("../assets/night.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top;
@@ -183,6 +183,6 @@ input:checked + .slider:before {
   margin-top: 40px;
   right: 25%;
   position: absolute;
-   box-shadow: inset 0.2rem 0.2rem 0.5rem rgba(195, 193, 198, 0.9),
-     inset -0.2rem -0.2rem 0.5rem #fff;
+   //box-shadow: inset 0.2rem 0.2rem 0.5rem rgba(195, 193, 198, 0.9),
+   //  inset -0.2rem -0.2rem 0.5rem #fff;
 }

@@ -105,25 +105,28 @@ const addSkycon = (data) => {
 };
 
 const changeImage = (data) => {
-  if (data.weather[0].main === "Clouds") {
+  if (data.weather[0].icon === "01n"){
     container.classList = "";
-    container.classList.add("cloudy-img");
-  } else if (data.weather[0].main === "Snow") {
-    container.classList = "";
-    container.classList.add("snow-img");
-  } else if (
-    data.weather[0].main === "Rain" ||
-    data.weather[0].main === "Drizzle"
-  ) {
-    container.classList = "";
-    container.classList.add("rain-img");
-  } else if (data.weather[0].main === "Thunderstorm") {
-    container.classList = "";
-    container.classList.add("thunderstorm-img");
-  } else {
-    container.classList = "";
-    container.classList.add("default-img");
-  }
+    container.classList.add("night-img");
+  }else if (data.weather[0].main === "Clouds") {
+      container.classList = "";
+      container.classList.add("cloudy-img");
+    } else if (data.weather[0].main === "Snow") {
+      container.classList = "";
+      container.classList.add("snow-img");
+    } else if (
+      data.weather[0].main === "Rain" ||
+      data.weather[0].main === "Drizzle"
+    ) {
+      container.classList = "";
+      container.classList.add("rain-img");
+    } else if (data.weather[0].main === "Thunderstorm") {
+      container.classList = "";
+      container.classList.add("thunderstorm-img");
+    } else {
+      container.classList = "";
+      container.classList.add("default-img");
+    }
 };
 const toFahrenheit = (temp) => temp * (9 / 5) + 32;
 
