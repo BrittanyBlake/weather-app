@@ -27,7 +27,6 @@ const footerMax = document.querySelector('.TodayTemp');
 const footerMin = document.querySelector('.TonightTemp');
 const tomorrowTemp = document.querySelector('.TomorrowTemp');
 
-
 const key = '929f44f39fa3d7465cb2e466b81dfc25';
 
 const toFahrenheit = (temp) => temp * (9 / 5) + 32;
@@ -181,20 +180,17 @@ const changeImage = (data) => {
 async function getWeather(value) {
   try {
     const response = await fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=${value}&appid=${key}&units=metric`
+      `https://api.openweathermap.org/data/2.5/weather?q=${value}&appid=${key}&units=metric`,
     );
     const result = await response.json();
     const data = result;
     displayData(data);
     changeImage(data);
-
   } catch (error) {
-    formInput.value = ''
-    formInput.classList.add('error')
-     formInput.placeholder = "Please enter a valid city";
-
+    formInput.value = '';
+    formInput.classList.add('error');
+    formInput.placeholder = 'Enter a valid city';
   }
-  
 }
 
 getWeather('granada');
