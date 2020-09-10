@@ -182,10 +182,10 @@ async function getWeather(value) {
     const response = await fetch(
       `https://api.openweathermap.org/data/2.5/weather?q=${value}&appid=${key}&units=metric`,
     );
-    
+
     const result = await response.json();
     const data = result;
-    
+
     displayData(data);
     changeImage(data);
   } catch (error) {
@@ -199,8 +199,8 @@ getWeather('granada');
 
 weatherForm.addEventListener('submit', (e) => {
   e.preventDefault();
-  formInput.classList.remove("error");
-  formInput.placeholder = "Enter a city";
+  formInput.classList.remove('error');
+  formInput.placeholder = 'Enter a city';
   getWeather(formInput.value);
   weatherForm.reset();
   toggler.checked = false;
