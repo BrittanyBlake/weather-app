@@ -24,6 +24,7 @@ const low = document.querySelector(".low");
 const humidity = document.querySelector(".humidity");
 const smallText = document.querySelector(".weather-text");
 const toggle = document.querySelector(".toggle");
+const toggler = document.querySelector(".toggler")
 
 const key = "929f44f39fa3d7465cb2e466b81dfc25";
 
@@ -44,6 +45,7 @@ weatherForm.addEventListener("submit", (e) => {
   e.preventDefault();
   getWeather(formInput.value);
   weatherForm.reset();
+  toggler.checked = false;
 });
 
 const displayData = (data) => {
@@ -137,7 +139,8 @@ const convertTemp = (data) => {
   const lowF = toFahrenheit(data.main.temp_min);
 
   toggle.addEventListener("change", (e) => {
-    if (e.target.checked) {
+   
+    if (toggler.checked) {
       mainTemp.innerHTML = `${Math.floor(mainTempF)}° F`;
       realFeel.innerHTML = `Feels like: ${Math.floor(realFeelF)}° F`;
       high.innerHTML = `Today's high: ${Math.floor(highF)}° F`;
